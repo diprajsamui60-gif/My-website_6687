@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dipraj Samui | Portfolio</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial;
+    background: #0f172a;
+    color: #fbf9fa;
+}
+header {
+    background: #020617;
+    padding: 20px;
+    text-align: center;
+}
+header h1 {
+    color: #38dff8;
+}
+section {
+    padding: 40px;
+    text-align: center;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: 1s;
+}
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero {
+    background: linear-gradient(to right,#63d0f1, hsl(198, 98%, 52%), #63d0f1);
+}
+#about h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.about-container {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid hsl(116, 96%, 71%);
+    border-radius: 12px;
+}
+.about-container img {
+    width: 170px;
+    border-radius: 10px;
+    border: 2px solid hsl(218, 96%, 59%);
+  box-shadow: 0 0 10px #2c6bfe;
+}
+.about-text {
+    max-width: 500px;
+    text-align: left;
+}
+#Education h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.education-container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    justify-content: center;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid hsl(276, 97%, 59%);
+    border-radius: 12px;
+}
+.education-list {
+  list-style-position: inside; 
+  text-align: left;
+  padding-left: 20px;
+}
+.education-list li {
+  margin-bottom: 10px;
+  color: white;
+}
+#skills h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.skills-container {
+    width: 90%;
+    max-width: 1000px; 
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid #05fcbe;
+}
+.skills-container {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap; 
+}
+.skills-box {
+  width: 30%;
+  background: rgba(255,255,255,0.05);
+  padding: 8px;
+  border-radius: 15px;
+  backdrop-filter: blur(10px);
+  border: 1px solid #00ffff;
+  box-shadow: 0 0 10px #00ffff;
+}
+.skills-box h3 {
+  text-align: center;
+  color: white;
+  margin-bottom: 15px;
+  border: 2px solid #e64ff7;
+  border-radius: 10px;
+}
+.skills-box p {
+  color: white;
+  margin: 5px 0;
+}
+.bar {
+  width: 100%;
+  height: 8px;
+  background:   rgba(255, 255, 255, 0.018);
+  border-radius: 10px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 10px rgba(5, 5, 5, 0.7);
+}
+.fill {
+    height: 10px;
+    background: hsl(188, 100%, 48%);
+    width: 0;
+    border-radius: 50px; 
+    transition: 2s;
+}
+.bar div {
+  height: 100%;
+  background: #00ffff;
+  border-radius: 10px;
+}
+.skills-box p {
+  text-align: left;
+  margin-left: 5px;
+}
+#project h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+}
+.card {
+    background: #1e293b;
+    margin: 10px;
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #05dbfc;
+    border-radius: 12px;
+}
+.projects-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #4705fc;
+    border-radius: 12px;
+}
+#projects .card {
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+}
+.card:hover {
+    box-shadow: 
+        0 0 10px #00ffff,
+        0 0 10px #00ffff,
+        0 0 10px #00ffff;
+    transform: scale(1.05);
+}
+#Certificate h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.Certificate {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    background: #1e293b;
+    margin: 10px;
+    padding: 15px;
+    width: 220px;
+    border-radius: 10px;
+    cursor: pointer;
+    border: 1px solid #05fcf8;
+    border-radius: 12px;
+}
+.Certificate-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border: 1px solid #20fb2e;
+    border-radius: 12px;
+}
+.Certificate .card {
+    border: 1px solid #00ffff;
+    box-shadow: 0 0 10px  #00ffff;
+}
+.card:hover {
+    box-shadow: 
+        0 0 5px  #00ffff,
+        0 0 10px  #00ffff,
+        0 0 15px  #00ffff;
+    transform: scale(1.03);
+}
+#interests h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.interests {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.interests-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    border-radius: 20px;
+    border : 1px solid #c2fc05;
+    border-radius: 12px;
+
+}
+.interest-box {
+    background: #1e293b;
+    padding: 15px;
+    border-radius: 10px;
+    width: 150px;
+    border: 1px solid hsl(28, 100%, 50%);
+    box-shadow: 0 0 10px #ff9100;
+}
+#Contact h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+#Personal h2 {
+    display: inline-block;
+    padding: 10px 25px;
+    background: rgba(255,20,147, 0.08);
+    backdrop-filter: blur(10px);
+    border: 1px solid #fc0580;
+    border-radius: 12px;
+    color: white;
+    text-shadow: 0 0 10px #ff00d0;
+    box-shadow: 0 0 10px lab(96.21% 0.18 -0.49);
+}
+.Personal-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    width: 60%;
+    max-width: 700px;
+    margin: auto;
+    padding: 20px;  
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(28, 97%, 54%);
+}
+.Personal-list {
+  list-style-position: inside; 
+  text-align: left;
+  padding-left: 20px;
+}
+.Personal-list li {
+  margin-bottom: 10px;
+  color: white;
+}
+.modal {
+    display: none;
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background: rgba(0,0,0,0.8);
+}
+.modal-content {
+    background: white;
+    color: black;
+    margin: 10% auto;
+    padding: 20px;
+    width: 300px;
+    border-radius: 10px;
+}
+.modal img {
+    width: 100%;
+}
+.close {
+    float: right;
+    cursor: pointer;
+}
+footer {
+    background: #020617;
+    padding: 10px;
+}
+@media screen and (max-width: 768px) {
+
+    .about-container,
+    .education-container,
+    .skills-container,
+    .projects-container,
+    .certificate-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .about-container img {
+        width: 180px;
+        height: auto;
+    }
+
+    .about-text {
+        width: 90%;
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .skills-box,
+    .subject-box {
+        width: 90%;
+        margin: 10px 0;
+    }
+
+    .card {
+        width: 90%;
+        margin: 10px auto;
+    }
+
+    h1, h2 {
+        font-size: 24px;
+    }
+    @media (max-width: 768px) {
+
+  .personal-container ul li{
+      font-size: 18px;
+      line-height: 1.8;
+      word-break: break-word;
+  }
+
+  .personal-container{
+      width: 90%;
+      margin: auto;
+      padding: 20px;
+  }
+
+}
+}
+</style>
+</head>
+
+<body>
+<header>
+    <h1>Mr. Dipraj Samui</h1>
+</header>
+<section class="hero show">
+    <h2>Hello, Welcome to my profile...</h2>
+</section>
+<section id="about">
+    <h2>About Me</h2>
+    <div class="about-container">
+        <img src="dipraj.jpg" alt="profile">
+        <div class="about-text">
+            <p>
+             Hello! I'm <b>Dipraj Samui</b>, a passionate and dedicated programmer from India 🇮🇳. 
+             I have a strong foundation in C and Java. I am continuously expanding my skills in Web Development and electronics project.
+            </p>
+
+             <p>
+             I enjoy building real-world projects, solving complex problems, and learning new technologies. 
+             My interests include software development, electronics, and innovative system design.
+             </p>
+
+             <p>
+              Currently, I am pursuing B.Tech in Electronics and Communication Engineering, 
+              with a goal to become a skilled software developer and contribute to impactful technological solutions.
+             </p
+        </div>
+    </div>
+</section>
+<section id="Education">
+  <h2>My Education</h2>
+  <div class="education-container">
+    <ul class="education-list">
+      <li>
+        <b>🎓 Madhyamik (WBBSE) 2018 :</b> 
+        Chaltakhali Roy Gunakar Bharatchandra Institution
+      </li>
+<br>
+      <li>
+        <b>🎓 Higher Secondary (WBSCVTE) 2020 :</b> 
+        Engineering Institute For Junior Executives  (Science)
+      </li>
+<br>
+      <li>
+        <b>🎓 Diploma (MPBE) 2022 :</b> 
+        Swami Vivekanand University Sagar Madhyapradesh  (Electrical Engineering)
+      </li>
+<br>
+      <li>
+        <b>🎓 B.Tech (MAKAUT) 2027 :</b> 
+        Narula Institute of Technology  (Electronics and Communication Engineering)
+      </li>
+    </ul>
+  </div>
+</section>
+<section id="skills">
+  <h2>My Skills</h2>
+  <div class="skills-container">
+    <div class="skills-box">
+      <h3>Subjects</h3>
+      <div class="skill"><p>Electrical - 85%</p><div class="bar"><div class="fill" data-width="85%"></div></div></div>
+      <div class="skill"><p>Electronics - 90%</p><div class="bar"><div class="fill" data-width="90%"></div></div></div>
+      <div class="skill"><p>DBMS - 75%</p><div class="bar"><div class="fill" data-width="75%"></div></div></div>
+      <div class="skill"><p>Android app development - 55%</p><div class="bar"><div class="fill" data-width="55%"></div></div></div>
+      <div class="skill"><p>Ethical hacking - 55%</p><div class="bar"><div class="fill" data-width="55%"></div></div></div>
+      <div class="skill"><p>Artificial Intelligent - 55%</p><div class="bar"><div class="fill" data-width="55%"></div></div></div>
+    </div>
+    <div class="skills-box">
+      <h3>Programming</h3>
+      <div class="skill"><p>C - 80%</p><div class="bar"><div class="fill" data-width="80%"></div></div></div>
+      <div class="skill"><p>C++ - 75%</p><div class="bar"><div class="fill" data-width="75%"></div></div></div>
+      <div class="skill"><p>Java - 90%</p><div class="bar"><div class="fill" data-width="90%"></div></div></div>
+      <div class="skill"><p>JavaScript - 50%</p><div class="bar"><div class="fill" data-width="50%"></div></div></div>
+      <div class="skill"><p>HTML - 60%</p><div class="bar"><div class="fill" data-width="60%"></div></div></div>
+      <div class="skill"><p>CSS - 60%</p><div class="bar"><div class="fill" data-width="60%"></div></div></div>
+      <div class="skill"><p>Python (Basic) - 40%</p><div class="bar"><div class="fill" data-width="40%"></div></div></div>
+      <div class="skill"><p>SQL - 50%</p><div class="bar"><div class="fill" data-width="50%"></div></div></div>
+      <div class="skill"><p>Matlab - 60%</p><div class="bar"><div class="fill" data-width="60%"></div></div></div>
+    </div>
+  </div>
+</section>
+<section id ="interests">
+    <h2>My Hobbies</h2>
+    <div class="interests-container">
+        <div class="interest-box">📚 Reading</div>
+        <div class="interest-box">✈️ Traveling</div>
+        <div class="interest-box">🔬 Experiment</div>
+        <div class="interest-box">🏆 Sports</div>
+    </div>
+</section>
+<section id ="project">
+    <h2>My Projects</h2>
+    <div class="projects-container">
+        <div class="card" onclick="openModal('locomotive circuit, Electronics project (Electrical + Electronics)','LER.jpg')">
+                          ⚡locomotive circuit Electronics project (Electrical + Electronics) </div>
+        <div class="card" onclick="openModal('RC hydraulic JCB (Mechanical + Electronics)','JCB.png')">
+                          🚜 RC hydraulic JCB (Mechanical + Electronics) </div>
+        <div class="card" onclick="openModal('Facebook, YouTube logo, Facebook login page, pop up window (Java Swing)','FYR.png')">
+                          🎨 Facebook, YouTube logo, Facebook login page, pop up window (Java Swing) </div>
+        <div class="card" onclick="openModal('Rule-Based Recommendation System (Java full stack)','.jpg')">
+                          🧠 Rule-Based Recommendation System (Java full stack) </div>
+        <div class="card" onclick="openModal('Web design (html + CSS)','.jpg')">
+                          💻 Web design (html + CSS) </div>           
+    </div>
+</section>
+<section id ="Certificate">
+    <h2>My Certificate</h2>
+    <div class="Certificate-container">
+        <div class="card" onclick="openModal('Java','java.jpg')">
+                          ☕ Java </div>
+        <div class="card" onclick="openModal('Android app development','app.png')">
+                          📱 Android app development </div>
+        <div class="card" onclick="openModal('Ethical hacking','.jpg')">
+                          🛡️ Ethical hacking </div>
+        <div class="card" onclick="openModal('Java Full Stack development','IMG_full.jpg')">
+                          💻 Java Full Stack development
+</div>
+</section>
+<section id="Personal">
+  <h2> My Personal details</h2>
+  <div class="Personal-container">
+    <ul class="Personal-list">
+      <li>
+        <b>🏠 Village :</b> 
+        Harishpur
+      </li>
+<br>
+      <li>
+        <b>📮 Post :</b> 
+        Harishpur
+      </li>
+<br>
+      <li>
+        <b>🛡️ Police Station :</b> 
+        Penro
+      </li>
+<br>
+      <li>
+        <b>🔢 Pin code :</b> 
+        711410
+      </li>
+<br>
+      <li>
+        <b>📍 District :</b> 
+        Howrah
+      </li>
+<br>
+      <li>
+        <b>🗺️ State :</b> 
+       West Bengal
+      </li>
+<br>
+      <li>
+        <b>🌍 Country :</b> 
+       India
+      </li>
+    </ul>
+  </div>
+</section>
+<section id ="Contact">
+    <h2>Contact</h2>
+    <p><p>📧 diprajsamui246@gmail.com</p></p>
+    <p>📞 Mobile no: +91 9749789616</p>
+    <p>💬 WhatsApp: +91 9749789616</p>
+    <a href="mailto:diprajsamui246@gmail.com">
+    <i class="fa-solid fa-envelope"></i> Send Email
+</a>
+</section>
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <span class="close" onclick="closeModal()">X</span>
+        <h3 id="title"></h3>
+        <img id="image">
+        <p></p>
+    </div>
+</div>
+<footer>
+    <p>© 6687 Dipraj Samui</p>
+</footer>
+<script>
+window.onload = function() {
+    document.querySelectorAll(".fill").forEach(f=>{
+        f.style.width = f.getAttribute("data-width");
+    });
+};
+window.addEventListener("scroll", ()=>{
+    document.querySelectorAll("section").forEach(sec=>{
+        if(sec.getBoundingClientRect().top < window.innerHeight-100){
+            sec.classList.add("show");
+        }
+    });
+});
+function openModal(title,img){
+    document.getElementById("modal").style.display="block";
+    document.getElementById("title").innerText=title;
+    document.getElementById("image").src=img;
+}
+function closeModal(){
+    document.getElementById("modal").style.display="none";
+}
+</script>
+</body>
+</html>
