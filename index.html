@@ -384,10 +384,60 @@ section.show {
 .close {
     float: right;
     cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: red;
+    color: white;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+     font-size: 20px; 
+    font-weight: bold;
 }
 footer {
     background: #020617;
     padding: 10px;
+}
+    .modal-content{
+    background: #111;
+    color: white;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    border: 2px solid #00ffff;
+    box-shadow: 0 0 10px #00ffff;
+    max-width: 600px;
+    margin: auto;
+    position: relative;
+}
+.modal-content img{
+    width: 100%;
+    border: 2px solid #ff4fd8;
+    border-radius: 15px;
+    box-shadow: 0 0 5px #ff4fd8;
+    padding: 5px;
+}
+.view-btn{
+    margin-top: 15px;
+    padding: 8px 18px;
+    background: transparent;
+    color: #00ffff;
+    border: 2px solid #ff00e1;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 13px;
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+.view-btn:hover{
+    transform: scale(1.05);
+    background: #00ffff;
+    color: black;
 }
 @media screen and (max-width: 768px) {
 
@@ -534,33 +584,95 @@ footer {
         <div class="interest-box">🏆 Sports</div>
     </div>
 </section>
-<section id ="project">
+<section id="project">
     <h2>My Projects</h2>
+
     <div class="projects-container">
-        <div class="card" onclick="openModal('locomotive circuit, Electronics project (Electrical + Electronics)','LER.jpg')">
-                          ⚡locomotive circuit Electronics project (Electrical + Electronics) </div>
-        <div class="card" onclick="openModal('RC hydraulic JCB (Mechanical + Electronics)','JCB.png')">
-                          🚜 RC hydraulic JCB (Mechanical + Electronics) </div>
-        <div class="card" onclick="openModal('Facebook, YouTube logo, Facebook login page, pop up window (Java Swing)','FYR.png')">
-                          🎨 Facebook, YouTube logo, Facebook login page, pop up window (Java Swing) </div>
-        <div class="card" onclick="openModal('Rule-Based Recommendation System (Java full stack)','.jpg')">
-                          🧠 Rule-Based Recommendation System (Java full stack) </div>
-        <div class="card" onclick="openModal('Web design (html + CSS + JS)','WB.jpg')">
-                          💻 Web design (html + CSS) </div>           
+
+        <div class="card">
+            ⚡ Locomotive circuit Electronics project (Electrical + Electronics)
+            <br><br>
+            <button class="view-btn" onclick="openModal('locomotive circuit, Electronics project (Electrical + Electronics)','LER.jpg')">
+                View Project
+            </button>
+        </div>
+
+        <div class="card">
+            🚜 RC hydraulic JCB (Mechanical + Electronics)
+            <br><br>
+            <button class="view-btn" onclick="openModal('RC hydraulic JCB (Mechanical + Electronics)','JCB.png')">
+                View Project
+            </button>
+        </div>
+
+        <div class="card">
+            🎨 Facebook, YouTube logo, Facebook login page, pop up window (Java Swing)
+            <br><br>
+            <button class="view-btn" onclick="openModal('Facebook, YouTube logo, Facebook login page, pop up window (Java Swing)','FYR.png')">
+                View Project
+            </button>
+        </div>
+
+        <div class="card">
+            🧠 Rule-Based Recommendation System (Java full stack)
+            <br><br>
+            <button class="view-btn" onclick="openModal('Rule-Based Recommendation System (Java full stack)','-.jpg')">
+                View Project
+            </button>
+        </div>
+
+        <div class="card">
+            💻 Web design (HTML + CSS)
+            <br><br>
+            <button class="view-btn" onclick="openModal('Web design (html + CSS + JS)','WB.jpg')">
+                View Project
+            </button>
+        </div>
+
     </div>
 </section>
-<section id ="Certificate">
+<section id="Certificate">
     <h2>My Certificate</h2>
+
     <div class="Certificate-container">
-        <div class="card" onclick="openModal('Java','java.jpg')">
-                          ☕ Java </div>
-        <div class="card" onclick="openModal('Android app development','app.png')">
-                          📱 Android app development </div>
-        <div class="card" onclick="openModal('Ethical hacking','.jpg')">
-                          🛡️ Ethical hacking </div>
-        <div class="card" onclick="openModal('Java Full Stack development','IMG_full.jpg')">
-                          💻 Java Full Stack development
-</div>
+
+        <div class="card">
+            ☕ Java
+            <br><br>
+            <button class="view-btn"
+                onclick="openModal('Java','java.jpg')">
+                View Certificate
+            </button>
+        </div>
+
+        <div class="card">
+           📱 Android app development
+            <br><br>
+            <button class="view-btn"
+                onclick="openModal('Android app development','app.png')">
+                View Certificate
+            </button>
+        </div>
+
+        <div class="card">
+            🛡️ Ethical hacking
+            <br><br>
+            <button class="view-btn"
+                onclick="openModal('Ethical hacking','LER.jpg')">
+                View Certificate
+            </button>
+        </div>
+
+        <div class="card">
+            💻 Java Full Stack development
+            <br><br>
+            <button class="view-btn"
+                onclick="openModal('Java Full Stack development','IMG_full.jpg')">
+             View Certificate
+            </button>
+        </div>
+
+    </div>
 </section>
 <section id="Personal">
   <h2> My Personal details</h2>
@@ -614,10 +726,13 @@ footer {
 </section>
 <div id="modal" class="modal">
     <div class="modal-content">
-        <span class="close" onclick="closeModal()">X</span>
-        <h3 id="title"></h3>
-        <img id="image">
-        <p></p>
+        <span class="close" onclick="closeModal()">&times;</span>
+
+<h3 id="title"></h3>
+
+<img id="image" src="" alt="Project Image">
+
+<p></p>
     </div>
 </div>
 <footer>
