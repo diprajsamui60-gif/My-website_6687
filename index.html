@@ -364,11 +364,13 @@ section.show {
 .modal {
     display: none;
     position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background: rgba(0,0,0,0.8);
+    z-index: 9999;
+}
 }
 .modal-content {
     background: white;
@@ -628,7 +630,13 @@ footer {
                 View Project
             </button>
         </div>
-
+<div class="card">
+    💊 MediCare+ (Android App)
+    <br><br>
+    <button class="view-btn" onclick="openModal('MediCare+  (Java)','MediCare.png')">
+        View Project
+    </button>
+</div>
     </div>
 </section>
 <section id="Certificate">
@@ -731,7 +739,9 @@ footer {
 <h3 id="title"></h3>
 
 <img id="image" src="" alt="Project Image">
-
+<a id="downloadBtn" href="#" target="_blank" class="view-btn" style="display:none;">
+    📥 Download APK
+</a>
 <p></p>
     </div>
 </div>
@@ -755,6 +765,15 @@ function openModal(title,img){
     document.getElementById("modal").style.display="block";
     document.getElementById("title").innerText=title;
     document.getElementById("image").src=img;
+
+    const downloadBtn = document.getElementById("downloadBtn");
+
+    if(title.includes("MediCare")){
+        downloadBtn.style.display = "inline-block";
+        downloadBtn.href = "https://github.com/diprajsamui60-gif/MadiCare/raw/main/app-release.apk";;
+    }else{
+        downloadBtn.style.display = "none";
+    }
 }
 function closeModal(){
     document.getElementById("modal").style.display="none";
